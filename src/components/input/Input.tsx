@@ -1,14 +1,14 @@
-import { FC } from "react";
+import { FC, InputHTMLAttributes } from "react";
 type typeInput = "text" | "number" | "password";
-interface Props {
+interface Props  extends InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   value?: number | string;
   type?: typeInput;
 }
-const Input: FC<Props> = ({ placeholder, type, value }) => {
+const Input: FC<Props> = ({ placeholder, type, value, ...props }) => {
   return (
     <>
-      <input type={type} placeholder={placeholder} value={value} />
+      <input type={type} placeholder={placeholder} value={value} {...props} />
     </>
   );
 };
