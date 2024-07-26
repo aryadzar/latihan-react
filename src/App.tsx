@@ -1,20 +1,16 @@
-import { ChangeEvent, useState } from "react";
-import Input from "./components/input/Input";
+import ContohList from "./features/contoh-list/ContohList";
+import ContohList2 from "./features/contoh-list/ContohList2";
+import LatihanForm from "./features/latihan-form/LatihanForm";
+import LatihanForm2 from "./features/latihan-form/LatihanForm2";
+
 
 function App() {
-  const [nama, setNama] = useState<string>();
 
-  const handleChangeNama = (e: ChangeEvent<HTMLInputElement>) => {
-    setNama(e.target.value);
-  };
 
   return (
     <>
       <div className="App">
-        <Input onChange={handleChangeNama} />
-        {
-          nama=='john'? <> <h1> kamu adalah {nama}</h1> </> : <> <h1> Kamu Bukan John</h1> </>
-        }
+        <LatihanForm2/>
       </div>
     </>
   );
